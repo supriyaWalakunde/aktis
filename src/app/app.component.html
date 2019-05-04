@@ -1,0 +1,16 @@
+<div>
+  <form role="form" #pageForm="ngForm">
+  <label>Pages:</label>
+  <input type="text" appPageValidator #pageNumber = "ngModel" name="pageNumber"
+   [(ngModel)]="pageNumberValue"/>
+  <div style="color:red" *ngIf="pageNumber.touched && pageNumber.errors?.pageInvalid">
+    Invalid
+  </div>
+  <div style="color:green" *ngIf="pageNumber.touched && !pageNumber.errors?.pageInvalid">
+    Valid
+  </div>
+
+
+</form>
+
+</div>
